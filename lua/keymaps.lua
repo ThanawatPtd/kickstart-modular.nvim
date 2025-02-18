@@ -46,9 +46,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Custom
-vim.keymap.set('n', '<leader>s', ':w<CR>', { desc = 'Save current file' })
+vim.keymap.set('n', '<leader>S', ':w<CR>', { desc = 'Save current file' })
 vim.keymap.set('n', 'DD', '"_dd', { desc = 'Delete without save to register' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', '<leader>ct', ':Telescope colorscheme<CR>', { desc = 'change theme' })
+vim.keymap.set('v', '<leader>p', '"_dP')
 
 -- vim: ts=2 sts=2 sw=2 et
