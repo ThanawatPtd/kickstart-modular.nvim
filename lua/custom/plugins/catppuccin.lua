@@ -2,8 +2,8 @@
 return {
   'catppuccin/nvim',
   name = 'catppuccin',
-  priority = 10000,
+  priority = 1000,
   config = function()
-    vim.cmd.colorscheme 'catppuccin-latte'
+    vim.cmd.colorscheme 'catppuccin-frappe'
   end,
 }
