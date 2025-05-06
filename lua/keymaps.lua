@@ -56,4 +56,8 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>ct', ':Telescope colorscheme<CR>', { desc = 'change theme' })
 vim.keymap.set('v', '<leader>p', '"_dP')
 
+vim.keymap.set('n', '<leader>q', ':copen<CR>')
+vim.keymap.set('n', ']q', ':cnext<CR>')
+vim.keymap.set('n', '[q', ':cprev<CR>')
+
 -- vim: ts=2 sts=2 sw=2 et
