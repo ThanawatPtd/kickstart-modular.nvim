@@ -50,14 +50,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Custom
 vim.keymap.set('n', '<leader>S', ':w<CR>', { desc = 'Save current file' })
-vim.keymap.set('n', 'DD', '"_dd', { desc = 'Delete without save to register' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>ct', ':Telescope colorscheme<CR>', { desc = 'change theme' })
-vim.keymap.set('v', '<leader>p', '"_dP')
 
 vim.keymap.set('n', '<leader>q', ':copen<CR>')
 vim.keymap.set('n', ']q', ':cnext<CR>')
 vim.keymap.set('n', '[q', ':cprev<CR>')
+
+-- Use leader+d for delete without copying
+vim.keymap.set('n', '<leader>d', '"_d', { desc = 'Delete without copying' })
+vim.keymap.set('n', '<leader>dd', '"_dd', { desc = 'Delete line without copying' })
+vim.keymap.set('n', '<leader>D', '"_D', { desc = 'Delete to end without copying' })
+vim.keymap.set('v', '<leader>d', '"_d', { desc = 'Delete selection without copying' })
+
+-- Use leader+p for paste without copying (replace without yanking)
+vim.keymap.set('v', '<leader>p', '"_dP', { desc = 'Paste without copying replaced text' })
+vim.keymap.set('v', '<leader>P', '"_dp', { desc = 'Paste before without copying replaced text' })
 
 -- vim: ts=2 sts=2 sw=2 et
