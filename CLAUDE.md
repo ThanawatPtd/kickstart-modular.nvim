@@ -37,10 +37,13 @@ This config is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.n
 | `<leader>f` | Format buffer (conform) |
 | `<leader>gg` | Open LazyGit |
 | `<leader>ct` | Telescope colorscheme picker |
-| `<leader>d/dd/D` | Delete without yanking |
-| `<leader>p/P` (visual) | Paste without yanking replaced text |
-| `<C-j>/<C-k>` | Navigate quickfix list |
+| `<leader>d/D` | Delete without yanking |
+| `<leader>p` (visual) | Paste without yanking replaced text |
+| `<C-h/j/k/l>` | Navigate windows |
+| `<leader>q` | Open quickfix list |
+| `]q/[q` | Next/prev quickfix |
 | `<leader>e` | Open diagnostic float |
+| `<leader>o/O` | Toggle/focus Undotree |
 | `J/K` (visual) | Move selection up/down |
 
 ## Adding plugins
