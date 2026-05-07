@@ -6,3 +6,5 @@ require 'options'
 require 'keymaps'
 require 'lazy-bootstrap'
 require 'lazy-plugins'
+
+require('vim._core.ui2').enable()
