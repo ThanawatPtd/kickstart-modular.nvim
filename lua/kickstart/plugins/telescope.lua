@@ -31,6 +31,15 @@ return {
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
+      -- telescope's treesitter_attach uses old nvim-treesitter APIs removed in newer versions;
+      -- replace ts_highlighter entirely with the modern vim.treesitter.start() approach
+      local preview_utils = require 'telescope.previewers.utils'
+      preview_utils.ts_highlighter = function(bufnr, ft)
+        local lang = vim.treesitter.language.get_lang(ft) or ft
+        local ok = pcall(vim.treesitter.start, bufnr, lang)
+        return ok
+      end
+
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
       -- many different aspects of Neovim, your workspace, LSP, and more!
