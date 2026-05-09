@@ -43,15 +43,18 @@ return {
         }),
       }
 
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' },
-        },
-      })
-
       cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
+        mapping = cmp.mapping.preset.cmdline {
+          ['<Tab>'] = {
+            c = function()
+              if cmp.visible() then
+                cmp.confirm { select = true }
+              else
+                cmp.complete()
+              end
+            end,
+          },
+        },
         sources = cmp.config.sources({
           { name = 'path' },
         }, {
@@ -59,6 +62,14 @@ return {
         }),
         matching = { disallow_symbol_nonprefix_matching = false },
       })
+
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' },
+        },
+      })
+
     end,
   },
   {
